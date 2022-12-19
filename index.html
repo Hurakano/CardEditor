@@ -1,0 +1,18 @@
+<html>
+<head>
+<script src="siteScript.js"></script>
+</head>
+
+<body>
+<div>
+    <input id="svgFileSelector" type="file" onchange="loadSvgFile()" />
+    <input id="descriptionFileSelector" type="file" onchange="loadDescriptionFile()" />
+    <button onclick="saveSvg()">Save svg</button>
+</div>
+<div>
+    Zoom: <button onclick="zoomIn()">+</button><button onclick="zoomOut()">-</button>
+</div>
+<div id="svgContent"></div>
+<div id="controlElements"></div>
+</body>
+</html>
