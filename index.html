@@ -1,18 +1,33 @@
 <html>
 <head>
-<script src="siteScript.js"></script>
+    <title>Card editor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="siteScript.js"></script>
 </head>
 
 <body>
 <div>
-    <input id="svgFileSelector" type="file" onchange="loadSvgFile()" />
-    <input id="descriptionFileSelector" type="file" onchange="loadDescriptionFile()" />
-    <button onclick="saveSvg()">Save svg</button>
+    <div style="display: inline-block">
+        Card svg file:<br />
+        <input id="svgFileSelector" type="file" accept=".svg" onchange="loadSvgFile()" />
+    </div>
+    <div style="display: inline-block">
+        Card description file xml:<br />
+        <input id="descriptionFileSelector" type="file" accept=".xml" onchange="loadDescriptionFile()" />
+    </div>
+    <div style="display: inline-block">
+        Filename:<br />
+        <input id="newFilename" type="text" value="card.svg" style="margin-bottom: 5px"><br />
+        <button onclick="saveSvg()">Save svg</button>
+    </div>
 </div>
-<div>
-    Zoom: <button onclick="zoomIn()">+</button><button onclick="zoomOut()">-</button>
+<div style="margin-top: 10px">
+    Zoom: <button onclick="zoomIn()" class="bigButton">+</button>
+    <button onclick="zoomOut()" class="bigButton">-</button>
 </div>
-<div id="svgContent"></div>
-<div id="controlElements"></div>
+<div style="display: flex">
+    <div id="svgContent" style="margin-right: 20px"></div>
+    <div id="controlElements"></div>
+</div>
 </body>
 </html>

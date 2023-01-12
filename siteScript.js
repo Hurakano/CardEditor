@@ -66,33 +66,44 @@ function readDescriptionFile(xml)
         var imgModifyButton = document.createElement("input");
         imgModifyButton.setAttribute("id", "imageChange" + index);
         imgModifyButton.setAttribute("type", "file");
+        imgModifyButton.setAttribute("accept", ".png, .gif, .jpg, .jpeg, .webm");
         imgModifyButton.setAttribute("onchange", 'loadNewImage("imageChange' + index + '", "' + image.getAttribute("elementId") + '")');
         controlDiv.appendChild(imgModifyButton);
         index += 1;
         
         var button = document.createElement("button");
         button.innerHTML = "←";
+        button.setAttribute("class", "bigButton");
         var newElement = controlDiv.appendChild(button);
         newElement.onclick = moveImage.bind(newElement, image.attributes.elementId.value, "x", -1);
+        
         button = document.createElement("button");
         button.innerHTML = "→";
+        button.setAttribute("class", "bigButton");
         newElement = controlDiv.appendChild(button);
         newElement.onclick = moveImage.bind(newElement, image.attributes.elementId.value, "x", 1);
+        
         button = document.createElement("button");
         button.innerHTML = "↑";
+        button.setAttribute("class", "bigButton");
         newElement = controlDiv.appendChild(button);
         newElement.onclick = moveImage.bind(newElement, image.attributes.elementId.value, "y", -1);
+        
         button = document.createElement("button");
         button.innerHTML = "↓";
+        button.setAttribute("class", "bigButton");
         newElement = controlDiv.appendChild(button);
         newElement.onclick = moveImage.bind(newElement, image.attributes.elementId.value, "y", 1);
         
         button = document.createElement("button");
         button.innerHTML = "+";
+        button.setAttribute("class", "bigButton");
         newElement = controlDiv.appendChild(button);
         newElement.onclick = scaleImage.bind(newElement, image.attributes.elementId.value, 1);
+        
         button = document.createElement("button");
         button.innerHTML = "-";
+        button.setAttribute("class", "bigButton");
         newElement = controlDiv.appendChild(button);
         newElement.onclick = scaleImage.bind(newElement, image.attributes.elementId.value, -1);
     }
@@ -166,7 +177,7 @@ function saveSvg()
     
     var tmpElement = document.createElement("a");
     tmpElement.href = window.URL.createObjectURL(svgBlob);
-    tmpElement.download = "card.svg";
+    tmpElement.download = document.getElementById("newFilename").value;
     document.body.appendChild(tmpElement);
     tmpElement.click();
     document.body.removeChild(tmpElement);
