@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <fieldDefinitions>
     <textField elementId="text4545" max-width="50" max-height="50" title="Card name" />
-    <textField elementId="text4749" max-width="50" max-height="50" title="Effect day" />
-    <textField elementId="text4759" max-width="50" max-height="50" title="Effect night" />
-    <image elementId="image4744" title="Picture cost" />
+    <textField elementId="text1697" max-width="50" max-height="50" title="Effect day" />
+    <textField elementId="text845" max-width="50" max-height="50" title="Effect night" />
+    <textField elementId="text1701" max-width="22" max-height="15" title="Cost" />
     <image elementId="image5123" title="Picture day" />
     <image elementId="image903" title="Picture night" />
 </fieldDefinitions>
